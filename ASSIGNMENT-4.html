@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>QUESTION NUMBER 1</title>
+        <script>
+            
+            function HeatIndex(value,r){
+
+                let heatIndex=(42.379+2.04901523*value+10.14333127*r-0.22475541*value*r-0.00683783*Math.pow(value,2)-0.05481717*Math.pow(r,2));
+
+                return  heatIndex;
+                
+            }
+            
+
+            function doInputOutPut(){
+                let Temperature=parseFloat(document.getElementById("tm").value);
+                let RelativeHumidity=parseFloat(document.getElementById("ws").value);
+            
+                let result="The heat index is:"+HeatIndex(Temperature, RelativeHumidity);
+
+                document.getElementById("out").innerHTML=result;
+            }
+            doInputOutPut();
+           
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        Fahrenheit: <input type="text" id="tm">
+        WindSpeed:<input type="text" id="ws">
+        <button type="button"  onclick="doInputOutPut()"> Heat Index</button>
+        <div id="out"></div>
+        
+    </body>
+</html>

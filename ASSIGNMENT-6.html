@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>QUESTION NUMBER 1</title>
+        <script>
+
+            function TriangularArea(value,sweep){
+
+                let av=(value+sweep+sweep)/2;
+            let area=Math.sqrt((av*(av-value)*(av-sweep)*(av-sweep)));
+            return  area;
+
+            }
+            function RoofVolume(value,width,sweep){
+
+               let RoofVolume=TriangularArea(value,width,sweep)*width;
+             return  RoofVolume;
+
+            }
+
+            function livingVolume(value,width,height){
+
+                let LivingVolume=value*width*height;
+                
+                return  LivingVolume;
+                
+            }
+            function houseVolume(value,width,sweep,height){
+
+                let volume1=livingVolume(value,width,height);
+                let volume2=RoofVolume(value,width,sweep);
+                let HuseVolume=volume1+volume2;
+
+                return  HuseVolume;
+                
+            }
+            
+
+            function doInputOutPut(){
+                let depth=parseFloat(document.getElementById("s1").value);
+                let width=parseFloat(document.getElementById("s2").value);
+                let sweep=parseFloat(document.getElementById("s3").value);
+                let height=parseFloat(document.getElementById("h").value);
+            
+                let result="The volume of the house is:"+houseVolume(depth,width,sweep,height);
+
+                document.getElementById("out").innerHTML=result;
+            }
+            doInputOutPut();
+           
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        depth: <input type="text" id="s1">
+       width:<input type="text" id="s2">
+        sweep: <input type="text" id="s3">
+        height:<input type="text" id="h">
+        <button type="button"  onclick="doInputOutPut()"> claculate volume</button>
+        <div id="out"></div>
+        
+    </body>
+</html>

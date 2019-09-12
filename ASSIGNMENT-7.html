@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>QUESTION NUMBER 1</title>
+        <script>
+
+
+            function ComputeFutureValue(value,annual,years,periodPerYear){
+
+                let futureValue=value*Math.pow((1+annual),years);
+
+                return  futureValue;
+                
+            }
+            
+
+            function doFV(){
+                let principal=parseFloat(document.getElementById("s1").value);
+                let annualRate=parseFloat(document.getElementById("s2").value);
+                let years=parseFloat(document.getElementById("s3").value);
+                let periodsPerYear=parseFloat(document.getElementById("h").value);
+            
+                let result="$"+ComputeFutureValue(principal,annualRate,years,periodsPerYear);
+
+                document.getElementById("out").innerHTML=result;
+            }
+            doFV();
+           
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        Annual Invested(Principal): <input type="text" id="s1"><br><br>
+       Annual Rate(example. 0.08):<input type="text" id="s2"><br><br>
+        Number of Years: <input type="text" id="s3"><br><br>
+        Period per year:<input type="text" id="h"><br><br>
+        <button type="button"  onclick="doFV()"> Compute future Value</button>
+        <div id="out"></div>
+        
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>QUESTION NUMBER 1</title>
+        <script>
+            function NumberGuessGame1(){
+                let guess_number;
+                let Answer=41;
+                let count=0;
+
+                do{
+                    guess_number=parseFloat(prompt("please enter a number"));
+                    count++;
+                }while(guess_number!==Answer)
+
+                return count;
+            }
+            function NumberGuessGame(){
+                let result="The number of Guessed are:"+" "+NumberGuessGame1();
+
+                document.getElementById("out").innerHTML=result;
+
+            }
+            NumberGuessGame();
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        <button type="button"  onclick="NumberGuessGame()">Play</button>
+        <div id="out"></div>
+        
+    </body>
+</html>

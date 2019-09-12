@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>QUESTION NUMBER 8</title>
+        <script>
+
+            function doBallance(){
+                let nuberOfPaymentsPaidToDate=parseFloat(document.getElementById("np").value);
+
+                let  result2=computeBallance();
+
+                document.getElementById("out1").innerHTML=result2;
+            }
+        
+              function computePayment(value,annual,years,periodPerYear){
+
+               let computePayment=value*annual/(1-Math.pow((1+annual),-years));
+
+               return  computePayment;
+
+               }
+               function computeBallance(value,annual,years,periodPerYear,nuberOfPaymentsPaidToDate){
+
+                 let computeBallance=(value*Math.pow((1+annual),nuberOfPaymentsPaidToDate)-periodPerYear*(Math.pow((1+annual),nuberOfPaymentsPaidToDate)-1))/(annual);
+
+                 return  computeBallance;
+
+               }
+
+            
+
+            function doPayment(){
+                let principal=parseFloat(document.getElementById("s1").value);
+                let annualRate=parseFloat(document.getElementById("s2").value);
+                let years=parseFloat(document.getElementById("s3").value);
+                let periodsPerYear=parseFloat(document.getElementById("h").value);
+               
+            
+                let result=computePayment(principal,annualRate,years,periodsPerYear);
+
+                document.getElementById("out").innerHTML=result;
+            }
+            doPayment();
+            doBallance();
+           
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        Annual Invested(Principal): <input type="text" id="s1" ><br><br>
+       Annual Rate(example. 0.08):<input type="text" id="s2"><br><br>
+        Number of Years: <input type="text" id="s3"><br><br>
+        Period per year:<input type="text" id="h"><br><br>
+        <button type="button"  onclick="doPayment()"> Compute Payment</button><br><br>
+        <div id="out"></div>
+        nuberOfPaymentsPaidToDate:<input type="text" id="np"><br><br>
+        <button type="button"  onclick="doBallance()"> Compute PayOff Payment</button>
+        <div id="out1"></div>
+        
+    </body>
+</html>

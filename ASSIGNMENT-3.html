@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>QUESTION NUMBER 1</title>
+        <script>
+            
+            function WindChill(value,speed){
+
+                let WindChillFactor=(35.74+0.6215*value-35.75*Math.pow(speed,0.16)+0.4275*value*Math.pow(speed,0.16));
+
+                return  WindChillFactor;
+                
+            }
+            
+
+            function doInputOutPut(){
+                let Temperature=parseFloat(document.getElementById("tm").value);
+                let windSpeed=parseFloat(document.getElementById("tm").value);
+            
+                let result="The wind chill factor is:"+WindChill(Temperature,windSpeed);
+
+                document.getElementById("out").innerHTML=result;
+            }
+            doInputOutPut();
+           
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        Fahrenheit: <input type="text" id="tm">
+        WindSpeed:<input type="text" id="ws">
+        <button type="button"  onclick="doInputOutPut()"> Wind Chill</button>
+        <div id="out"></div>
+        
+    </body>
+</html>

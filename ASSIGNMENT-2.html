@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>QUESTION NUMBER 1</title>
+        <script>
+            
+            function FahrToCels(value){
+                let Celcius=parseFloat(5/9*(value-32));
+
+                return  Celcius;
+                
+            }
+            function DoInputOutPut(){
+                let  Fahrenheit=parseFloat(document.getElementById("fah").value);
+                let CelciusTemp="The temperature in degree Celcius is:"+FahrToCels(Fahrenheit);
+
+                document.getElementById("out").innerHTML=CelciusTemp;
+            }
+            DoInputOutPut();
+
+
+            
+
+           
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        Fahrenheit: <input type="text" id="fah">
+        <button type="button"  onclick="DoInputOutPut()"> Celcius</button>
+        <div id="out"></div>
+        
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>QUESTION NUMBER 1</title>
+        <script>
+
+            function AreaOfTriabgle(value,s2,s3,){
+
+                let Av=(value+s2+s3)/2;
+                let area=Math.sqrt((Av*(Av-value)*(Av-s2)*(Av-s3)));
+                return  area;
+                
+            }
+            function PrismVolume(value,s2,s3,h){
+
+                let volume=AreaOfTriabgle(value,s2,s3)*h;
+
+                return  volume;
+                
+            }
+            
+
+            function doInputOutPut(){
+                let side1=parseFloat(document.getElementById("s1").value);
+                let side2=parseFloat(document.getElementById("s2").value);
+                let side3=parseFloat(document.getElementById("s3").value);
+                let height=parseFloat(document.getElementById("h").value);
+            
+                let result="The volume of the triangular prism  is:"+PrismVolume(side1,side2,side3,height);
+
+                document.getElementById("out").innerHTML=result;
+            }
+            doInputOutPut();
+           
+        </script>
+    </head>
+    <body>
+        <h3> NUMBER GUESS GAME</h3>
+        side1: <input type="text" id="s1">
+       side2:<input type="text" id="s2">
+        side3: <input type="text" id="s3">
+        height:<input type="text" id="h">
+        <button type="button"  onclick="doInputOutPut()"> claculate volume</button>
+        <div id="out"></div>
+        
+    </body>
+</html>
